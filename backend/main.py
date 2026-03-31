@@ -17,11 +17,11 @@ cache: dict = {}
 CACHE_TTL = 3600
 
 @app.get("/tasks")
-async def get_tasks(lang: str, stub_category: str):
-	if not lang or not stub_category:
-		raise HTTPException(status_code=400, detail="lang and stub_category required")
+async def get_tasks(lang: str, stub_category: str, citation_category: str):
+	if not lang or not stub_category or not citation_category:
+		raise HTTPException(status_code=400, detail="lang, stub_category, and citation_category required")
 	
-	cache_key = f"{lang}:{stub_category}"
+	cache_key = f"{lang}:{stub_category}:{citation_category}"
 	now = time.time()
 
 	if cache_key in cache:
@@ -29,9 +29,9 @@ async def get_tasks(lang: str, stub_category: str):
 		if age < CACHE_TTL:
 			print(f"Cache hit: {cache_key} ({int(age)}s old)")
 			return cache[cache_key]["data"]
+		
 	print(f"Cache miss: {cache_key} - fetching from wikimedia")
-	tasks = await fetch_all_tasks(lang, stub_category)
-
+	tasks = await fetch_all_tasks(lang, stub_category, citation_category)
 	cache[cache_key] = {"data": tasks, "fetched_at": now}
 	return tasks
 

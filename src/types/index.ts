@@ -5,6 +5,7 @@ export interface AfricanCountry {
 	languages: string[]
 	wikiLang: string
 	stubCategory: string
+	citationCategory: string
 	activeEditors: number
 	gap: "critical" | "high" | "medium" | "low"
 }
