@@ -20,7 +20,7 @@ export interface Task {
 export interface CountryTasks {
 	country: AfricanCountry
 	tasks: Task[]
-	fetchedAt: Number
+	fetchedAt: number
 }
 
 export interface DetectedLocation {
