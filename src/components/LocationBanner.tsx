@@ -12,11 +12,11 @@ export default function LocationBanner({ country, loading, onDismiss }: Props) {
 	if (!loading && country) return null
 	
 	return (
-		<div className="flex items-center justify-between px-4 py-2 border-b border-emerald-200 text-sm">
+		<div className="flex items-center justify-between px-4 py-2 border-b border-emerald-200 text-md">
 			{loading ? (
 				<span className='text-emerald-700'>Detecting your location....</span>
 			) : country ? (
-				<span className="text-emerald-800">
+				<span className="text-emerald-800 font-size-md">
 					Detected <strong>{country.name}</strong>-showing{" "}
 					<strong>{country.languages[0]}</strong> Wikipedia tasks
 				</span>
