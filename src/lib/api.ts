@@ -31,7 +31,8 @@ export async function detectLocation(): Promise<DetectedLocation | null> {
             latitude,
             longitude,
           })
-        } catch (_error) {
+        } catch (error) {
+          console.error("Error fetching location data:", error)
           resolve(null)
         }
       },
