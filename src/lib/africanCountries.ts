@@ -9,7 +9,7 @@ export const AFRICAN_COUNTRIES: Record<string, AfricanCountry> = {
     isoNumeric: "404", isoAlpha2: "KE", name: "Kenya",
     languages: ["Swahili", "English"], wikiLang: "sw",
     stubCategory: "Fupi",
-    citationCategory: "Makala zinazohitaji vyanzo", // ✅ verified
+    citationCategory: "Makala zinazohitaji vyanzo", // ∂∂verified
     activeEditors: 310, gap: "medium",
   },
   "566": {
@@ -30,7 +30,7 @@ export const AFRICAN_COUNTRIES: Record<string, AfricanCountry> = {
     isoNumeric: "834", isoAlpha2: "TZ", name: "Tanzania",
     languages: ["Swahili"], wikiLang: "sw",
     stubCategory: "Fupi",
-    citationCategory: "Makala zinazohitaji vyanzo", // ✅ verified (same as Kenya, sw wiki)
+    citationCategory: "Makala zinazohitaji vyanzo", // verified
     activeEditors: 180, gap: "medium",
   },
   "288": {
@@ -121,7 +121,7 @@ export const AFRICAN_COUNTRIES: Record<string, AfricanCountry> = {
     isoNumeric: "180", isoAlpha2: "CD", name: "DR Congo",
     languages: ["French", "Swahili", "Lingala"], wikiLang: "sw",
     stubCategory: "Fupi",
-    citationCategory: "Makala zinazohitaji vyanzo", // ✅ verified
+    citationCategory: "Makala zinazohitaji vyanzo", // verified
     activeEditors: 35, gap: "critical",
   },
   "024": {
@@ -135,7 +135,7 @@ export const AFRICAN_COUNTRIES: Record<string, AfricanCountry> = {
     isoNumeric: "800", isoAlpha2: "UG", name: "Uganda",
     languages: ["Swahili", "English"], wikiLang: "sw",
     stubCategory: "Fupi",
-    citationCategory: "Makala zinazohitaji vyanzo", // ✅ verified
+    citationCategory: "Makala zinazohitaji vyanzo", // verified
     activeEditors: 88, gap: "high",
   },
   "646": {
