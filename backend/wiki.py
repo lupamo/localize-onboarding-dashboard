@@ -13,7 +13,7 @@ async def fetch_translation_gaps(lang: str, limit: int = 15) -> List[Dict]:
 			res.raise_for_status()
 			data = res.json()
 			items = data.get("recommendations", [])
-			return [
+			return [ 
 				{
 					"type": "translation",
 					"title": item["title"],
