@@ -24,9 +24,9 @@ export interface CountryTasks {
 	fetchedAt: number
 }
 
-export interface DetectedLocation {
-	countryCode: string
-	countryName: string
-	latitude: number
-	longitude: number
-}
+// export interface DetectedLocation {
+// 	countryCode: string
+// 	countryName: string
+// 	latitude: number
+// 	longitude: number
+// }s

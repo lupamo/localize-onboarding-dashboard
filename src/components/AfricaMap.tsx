@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import {
   ComposableMap,
   Geographies,
@@ -15,11 +15,11 @@ const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
 interface Props {
   selectedCountry: AfricanCountry | null
-  detectedCountry: AfricanCountry | null
+  // detectedCountry: AfricanCountry | null
   onCountryClick: (country: AfricanCountry) => void
 }
 
-export default function AfricaMap({ selectedCountry, detectedCountry, onCountryClick }: Props) {
+export default function AfricaMap({ selectedCountry,  onCountryClick }: Props) {
   const [tooltipContent, setTooltipContent] = useState<string | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
 
@@ -28,14 +28,14 @@ export default function AfricaMap({ selectedCountry, detectedCountry, onCountryC
     if (!country) return "#e5e7eb" // non-African countries
 
     if (selectedCountry?.isoNumeric === geoId) return "#1D9E75"
-    if (detectedCountry?.isoNumeric === geoId && !selectedCountry) return "#1D9E75"
+    // if (detectedCountry?.isoNumeric === geoId && !selectedCountry) return "#1D9E75"
 
     return getGapColor(country.gap)
   }
 
   const getStroke = (geoId: string): string => {
     if (selectedCountry?.isoNumeric === geoId) return "#0f6e56"
-    if (detectedCountry?.isoNumeric === geoId) return "#0f6e56"
+    // if (detectedCountry?.isoNumeric === geoId) return "#0f6e56"
     return "#ffffff"
   }
 

@@ -1,38 +1,18 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useCallback } from "react"
 import dynamic from "next/dynamic"
 import { AfricanCountry, Task } from "@/types"
-import { detectLocation, fetchTasks } from "@/lib/api"
-import { getCountryByAlpha2 } from "@/lib/africanCountries"
+import { fetchTasks } from "@/lib/api"
 import CountryPanel from "@/components/CountryPanel"
-import LocationBanner from "@/components/LocationBanner"
 
 // Dynamically import map to avoid SSR issues with react-simple-maps
 const AfricaMap = dynamic(() => import("@/components/AfricaMap"), { ssr: false })
 
 export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState<AfricanCountry | null>(null)
-  const [detectedCountry, setDetectedCountry] = useState<AfricanCountry | null>(null)
-  const [locationLoading, setLocationLoading] = useState(true)
-  const [showBanner, setShowBanner] = useState(true)
   const [tasks, setTasks] = useState<Task[]>([])
   const [tasksLoading, setTasksLoading] = useState(false)
-
-  // Detect location on mount
-  useEffect(() => {
-    detectLocation().then((location) => {
-      if (location) {
-        const country = getCountryByAlpha2(location.countryCode)
-        if (country) {
-          setDetectedCountry(country)
-          setSelectedCountry(country)
-          loadTasks(country)
-        }
-      }
-      setLocationLoading(false)
-    })
-  }, [])
 
   const loadTasks = useCallback(async (country: AfricanCountry) => {
     setTasksLoading(true)
@@ -79,13 +59,13 @@ export default function Home() {
       </header>
 
       {/* Location banner */}
-      {showBanner && (
+      {/* {showBanner && (
         <LocationBanner
           country={detectedCountry}
           loading={locationLoading}
-          onDismiss={() => setShowBanner(false)}
+          onDismiss={() =ßßß> setShowBanner(false)}
         />
-      )}
+      )} */}
 
       {/* Main layout */}
       <div className="flex flex-1 overflow-hidden">
@@ -93,7 +73,6 @@ export default function Home() {
         <div className="flex-1 p-4">
           <AfricaMap
             selectedCountry={selectedCountry}
-            detectedCountry={detectedCountry}
             onCountryClick={handleCountryClick}
           />
         </div>
