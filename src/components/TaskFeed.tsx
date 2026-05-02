@@ -30,7 +30,7 @@ export default function TaskFeed({ tasks, loading, countryName}: Props) {
 	if (loading) {
 		return (
 			<div className="space-y-3">
-				{[...Array(6)].map((_, i) => (
+				{[...Array(7)].map((_, i) => (
 					<div key={i} className='h-4 bg-gray-100 rounded-lg animate-pulse'></div>
 				))}
 			</div>
